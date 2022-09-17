@@ -1,45 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="cur.css"> 
-    <style></style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/e66d6917ac.js" crossorigin="anonymous"></script>
+    <title>contact us</title>
 </head>
-<body style="background-color:#2e5894">
-<form>
-    <h3> Send in your Queries</h3>
-    <label for="Fname"> First name</label>
-    <br>
-    <input id="Fname" type="text">
-    <br>
-    <label for="Lname"> Last name</label>
-    <br>
-    <input id="Lname" type="text">
-    <br>
-    <label for="Age"> Age</label>
-    <br>
-    <input id="Age" type="text">
-    <br>
-    <label for="Desc">Description</label>
-    <br>
-    <input id="Desc"type="text">
-    <br>
-    <label for="password">Password</label>
-    <br>
-    <input id="password"type="password">
-    <br>
-    <br>
-    <label for="uf">Upload File</label>
-    <br>
-    <input id="uf"type="file">
-    <br>
-    <br>
-    <button> Submit </button>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="trends.html">TRENDS</a></li>
+                    <li><a href="currency.html">CURRENCIES</a></li>
+                    <li><a href="contactus.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i> 
+        </nav>
+    <h1>GET IN TOUCH</h1>
+    </section>
+    <!-------------contact-us-------->
+    <section class="contact">
+        <p> Get In  Touch<p>
+        <h1>CONTACT US</h1><br><br>
+    </section> 
+
+    <section class="contact-us"> 
+
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5>+1 9956784352</h5>
+                        <p>Monday to saturday,10AM to 6PM</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope-o"></i>
+                    <span>
+                        <h5>spam@gmail.com</h5>
+                        <h5>Email us your query</h5>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+            <form action="formhandler.php" method="post">
+                <input type="text" name="name" placeholder="Enter your name" required> 
+                <input type="email" name="email" placeholder="Enter email address" required> 
+                <input type="text" name="subject"  placeholder="Enter your subject" required> 
+                <textarea rows="8" name="message" placeholder="Message " required></textarea>
+                <button type="submit" class="hero-btn red-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+        
+    </section>
+   
+    
 
 
-</form>
+    
+  <!--------JavaScript for Toggle Menu----------->
+
+  <script>
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right="0";
+    }
+    function hideMenu(){
+        navLinks.style.right="-200px";
+    }
+</script>
 </body>
 </html>
