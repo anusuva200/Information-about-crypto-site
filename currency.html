@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+<script src="https://kit.fontawesome.com/e66d6917ac.js" crossorigin="anonymous"></script>
+
     <title>Currency</title>
     <link rel="stylesheet" href="cur.css"> 
 
@@ -17,16 +24,41 @@
             background-color: transparent;
         }
         a:hover {
-            color: lightblue;
+            color:red;
             background-color: transparent;
         }
         a:active {
-            color: rgb(223, 223, 105);
+            color: black;
             background-color: transparent;
         }
     </style>
 </head>
 <body>
+    <section class="c-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="trends.html">TRENDS</a></li>
+                    <li><a href="currency.html">CURRENCIES</a></li>
+                    <li><a href="contactus.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i> 
+        </nav>
+    </section>
+        
+        
+
+    
+    
+    <!--------Trends----->
+   
+   
+    <br><br><h1 style="text-align:center;color:white; background-color:rgb(46, 46, 148); font-size: 200%;">Top Cryptocurrencies</h1><br><br>
+    <section>
     <ul id="mylist">
         <li><a href="https://bitcoin.org/en/">Bitcoin</a></li>
         <li><a href="https://ethereum.org/en/">Ethereum</a></li>
@@ -55,6 +87,49 @@
         <li><a href="https://ripple.com/">Ripple</a></li>
         <li><a href="https://www.terra.money/">Terra</a></li>
     </ul>
-</body>
+</section>
+       <!-----footer--------->
+
+       <section class="footer">
+        <h4>About us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pellentesque aliquet trupis,eleifend faucibus
+        est<br>solicitudin ut.Maecenas ut venenatis ex,et dapibus
+        putus.</p>
+        <div class="icons">
+            <i  class="fa fa-facebook"></i>
+            <i  class="fa fa-twitter"></i>
+            <i  class="fa fa-instagram"></i>
+            <i  class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i  class="fa fa-heart-o"></i>by soaring crptoworld</p>
+
+    </section>
+
+
+
+
+
+
+
+
+
+      <!--------JavaScript for Toggle Menu----------->
+
+  <script>
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right="0";
+    }
+    function hideMenu(){
+        navLinks.style.right="-200px";
+    }
+</script>
+
+
+    
+
+
+    </body>
+</html>
 
 
