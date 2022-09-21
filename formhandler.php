@@ -8,16 +8,18 @@ $email_from='anusuvachaudhary@gmail.com';
 
 $email_subject='New form submission';
 
-$txt ="Name = ". $name . "\r\n  Email = " . $visitor_email . "\r\n  subject = " . $subject . "\r\n  Message =" . $message;
+$email_body= "User Name: $name. \n". 
+                "User Email: $visitor_email.\n".  
+                     "Subject : $subject.\n".  
+                         "User Message: $message.\n".;  
 
 $to ='anusuvachaudhary200@gmail.com';
 
 $headers="From: $email_form \r\n";
 
-$headers .= "Reply-To: $visitor_email \r\n"
+$headers .= "Reply-To: $visitor_email \r\n";
 
-if(visitor_email!=NULL){
-    mail($to,$email_subject,$txt,$headers);
-}
+mail($to,$email_subject,$email_body,$headers);
+
 header("Location: contactus.html");
 ?>
