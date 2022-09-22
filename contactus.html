@@ -55,22 +55,60 @@
                 </div>
             </div>
             <div class="contact-col">
-            <form action="formhandler.php" method="POST">
-                <input type="text" name="name" placeholder="Enter your name" required> 
-                <input type="email" name="email" placeholder="Enter email address" required> 
-                <input type="text" name="subject"  placeholder="Enter your subject" required> 
-                <textarea rows="8" name="message" placeholder="Message " required></textarea>
-                <button type="submit" class="hero-btn red-btn">Send Message</button>
-                <script src="https://smtpjs.com/v3/smtp.js">
-                    document.getElementById("btn1").style.color="red";
-                    alert("Query Submitted") 
-                </script> 
-                
+                <form action="javascript:sendmail()" method="post">
+                <input type="text" name="name" id="name" placeholder="Enter your name" required> 
+                <input type="email" name="email" id="email " placeholder="Enter email address" required> 
+                <input type="text" name="subject" id="subject" placeholder="Enter your subject" required> 
+                <textarea rows="8" name="message" id="message" placeholder="Message " required></textarea>
+                <button type="submit" class="hero-btn red-btn">Send Message</button>              
             </form>
         </div>
-    </div>
-        
+    </div>     
     </section>
+
+      
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<script src="https://smtpjs.com/v3/smtp.js"></script> 
+<script>
+
+   function sendmail(){
+  
+          var name = $('#name').val();
+          var email = $('#email').val();
+          var subject = $('#subject').val();
+          var message = $('#message').val();
+
+          // var body = $('#body').val();
+
+          var Body='name: '+name+'<br>email: '+email+'<br>subject: '+subject+'<br>message: '+message;
+          //console.log(name, phone, email, message);
+
+          Email.send({
+            SecureToken:"fbf31702-bb7f-4a4e-9c1c-4ccf17ee777f",  //encrypted Username(email) and password
+            To : 'them@website.com',
+            From : "you@isp.com",
+            Subject : "New message on contact from "+name,
+            Body : " body"
+          }).then(
+              message =>{
+                  //console.log (message);
+                  if(message=='OK'){
+                  alert('Your mail has been send. Thank you for connecting.');
+                  }
+                  else{
+                      console.error (message);
+                      alert('There is error at sending message. ')
+                      
+                  }
+
+              }
+          );
+
+      }
+
+</script>
    
     
        <!-----footer--------->
